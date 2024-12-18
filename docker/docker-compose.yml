@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  database:
+    image: postgres:15
+    container_name: my_postgres
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydatabase
+    volumes:
+      - ./db-scripts:/docker-entrypoint-initdb.d
+  wiremock:
+    image: wiremock/wiremock:2.35.0
+    container_name: wiremock_mock
+    ports:
+      - "8090:8080"
+    volumes:
+      - ./wiremock/mappings:/home/wiremock/mappings

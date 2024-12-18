@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/ws/18682841/json/"
+  },
+  "response": {
+    "status": 200,
+    "body": "{\"cep\":\"18682-841\",\"logradouro\":\"Praça da Sé\",\"bairro\":\"Jardim Príncipe\",\"localidade\":\"São Paulo\",\"estadoo\":\"São Paulo\"}",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
