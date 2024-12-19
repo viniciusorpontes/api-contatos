@@ -18,7 +18,7 @@ public class CodigoPostalServiceImpl implements CodigoPostalService {
 
     public static final String ERRO_AO_BUSCAR_CEP_STACK_TRACE = "Erro ao buscar CEP: {} - Stack Trace: {}";
     public static final String ERRO_AO_BUSCAR_O_CEP = "Erro ao buscar o CEP";
-    public static final String CEP_NÃO_ENCONTRADO = "CEP não encontrado";
+    public static final String CEP_NAO_ENCONTRADO = "CEP não encontrado";
     public static final String BUSCANDO_CEP = "Buscando CEP: {}";
 
     private final CodigoPostalRepository codigoPostalRepository;
@@ -35,7 +35,7 @@ public class CodigoPostalServiceImpl implements CodigoPostalService {
         try {
             response = cepClient.buscarCep(cep);
         } catch (WebClientResponseException.NotFound ex) {
-            throw new ObjectNotFoundException(CEP_NÃO_ENCONTRADO);
+            throw new ObjectNotFoundException(CEP_NAO_ENCONTRADO);
         } catch (Exception ex) {
             log.error(ERRO_AO_BUSCAR_CEP_STACK_TRACE, ex.getMessage(), ex.getStackTrace());
             throw new GenericException(ERRO_AO_BUSCAR_O_CEP);
