@@ -1,5 +1,6 @@
 package br.com.api.contatos.dto;
 
+import br.com.api.contatos.error.exception.GenericException;
 import br.com.api.contatos.model.Contato;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -13,6 +14,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ContatoBuscarDTO {
+
+    public static final String ERRO_AO_CONVERTER_JSON = "Erro ao converter json";
 
     private Long id;
     private String nome;
@@ -33,8 +36,7 @@ public class ContatoBuscarDTO {
         try {
             jsonNode = mapper.readTree(contato.getCodigoPostal().getJson());
         } catch (JsonProcessingException e) {
-            //TODO Dúvida com o Jorjão
-            throw new RuntimeException(e);
+            throw new GenericException(ERRO_AO_CONVERTER_JSON);
         }
 
         final ContatoBuscarDTO dto = new ContatoBuscarDTO();

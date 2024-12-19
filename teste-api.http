@@ -1,15 +1,58 @@
-### Salvar Contato
+### Salvar contato com sucesso
 POST /contatos HTTP/1.1
 Host: localhost:8080
+Content-Type: application/json
+
+{
+  "nome": "Rafael",
+  "telefone": "(14) 99837-1897",
+  "email": "vinicius@gmail.com",
+  "cep": "18682-841",
+  "numero": "813"
+}
+
+### Erro ao salvar contato
+POST /contatos HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
 
 {
   "nome": "Vinicius",
-  "telefone": "14998371897",
+  "telefone": "(14) 99837-1897",
   "email": "vinicius@gmail.com",
-  "cep": "18682841",
-  "numero": "183"
+  "cep": "12345-678",
+  "numero": "813"
 }
 
-### Buscar Contato
+### Buscar contatos todos os contatos
+GET /contatos HTTP/1.1
+Host: localhost:8080
+
+### Buscar contatos filtrados por nome
+GET /contatos?nome=vinicius HTTP/1.1
+Host: localhost:8080
+
+### Buscar contato
 GET /contatos/1 HTTP/1.1
+Host: localhost:8080
+
+### Atualizar contato
+PUT /contatos/2 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "nome": "Vinicius",
+  "telefone": "(14) 99837-1820",
+  "email": "vinicius@gmail.com",
+  "cep": "18682-841",
+  "numero": "813"
+}
+
+### Deletar contato
+DELETE /contatos/2 HTTP/1.1
+Host: localhost:8080
+
+### Buscar contato que não existe
+GET /contatos/10 HTTP/1.1
 Host: localhost:8080

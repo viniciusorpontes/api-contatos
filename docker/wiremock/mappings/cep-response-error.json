@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/ws/12345678/json/"
+  },
+  "response": {
+    "status": 404,
+    "body": "CEP não encontrado",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

@@ -1,5 +1,6 @@
 package br.com.api.contatos.error;
 
+import br.com.api.contatos.error.exception.GenericException;
 import br.com.api.contatos.error.exception.ObjectNotFoundException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -22,6 +23,12 @@ public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
     public ResponseEntity<ApiErrorMessage> objectNotFound(ObjectNotFoundException e) {
         final ApiErrorMessage apiErrorMessage = new ApiErrorMessage(e.getMessage());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(apiErrorMessage);
+    }
+
+    @ExceptionHandler(GenericException.class)
+    public ResponseEntity<ApiErrorMessage> errorGeneric(GenericException e) {
+        final ApiErrorMessage apiErrorMessage = new ApiErrorMessage(e.getMessage());
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(apiErrorMessage);
     }
 
     @Override

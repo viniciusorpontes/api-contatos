@@ -23,7 +23,7 @@ public record ContatoSalvarAlterarDTO(
 
         @NotBlank(message = "O CEP é obrigatório")
         @Pattern(regexp = "\\d{5}-\\d{3}", message = "Formato do CEP inválido. Use XXXXX-XXX")
-        @Size(min = 8, max = 8, message = "O cep deve ter 8 caracteres")
+        @Size(min = 9, max = 9, message = "O cep deve ter 9 caracteres")
         String cep,
 
         @NotBlank(message = "O número é obrigatório")
