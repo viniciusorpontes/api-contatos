@@ -1,0 +1,15 @@
+### Salvar Contato
+POST /contatos HTTP/1.1
+Host: localhost:8080
+
+{
+  "nome": "Vinicius",
+  "telefone": "14998371897",
+  "email": "vinicius@gmail.com",
+  "cep": "18682841",
+  "numero": "183"
+}
+
+### Buscar Contato
+GET /contatos/1 HTTP/1.1
+Host: localhost:8080

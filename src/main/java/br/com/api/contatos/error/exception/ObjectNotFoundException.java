@@ -1,4 +1,4 @@
-package br.com.api.contatos.exception;
+package br.com.api.contatos.error.exception;
 
 public class ObjectNotFoundException extends RuntimeException {
 

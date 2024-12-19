@@ -21,7 +21,11 @@ public class CodigoPostalServiceImpl implements CodigoPostalService {
 
     private CodigoPostal buscarCepWebService(String cep) {
         final String response = cepClient.buscarCep(cep);
-        final CodigoPostal codigoPostal = new CodigoPostal(response);
+        return salvar(cep, response);
+    }
+
+    private CodigoPostal salvar(String cep, String response) {
+        final CodigoPostal codigoPostal = new CodigoPostal(cep, response);
         return codigoPostalRepository.save(codigoPostal);
     }
 

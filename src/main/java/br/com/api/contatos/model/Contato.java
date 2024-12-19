@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
 @ToString
@@ -29,6 +28,9 @@ public class Contato {
     @ManyToOne
     @JoinColumn(name = "cep")
     private CodigoPostal codigoPostal;
+
+    @Column(name = "numero", nullable = false, length = 10)
+    private String numero;
 
     @Override
     public boolean equals(Object object) {

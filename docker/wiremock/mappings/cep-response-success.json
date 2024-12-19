@@ -5,7 +5,7 @@
   },
   "response": {
     "status": 200,
-    "body": "{\"cep\":\"18682-841\",\"logradouro\":\"Praça da Sé\",\"bairro\":\"Jardim Príncipe\",\"localidade\":\"São Paulo\",\"estadoo\":\"São Paulo\"}",
+    "body": "{\"cep\":\"18682-841\",\"logradouro\":\"Rua José Príncipe Penhafiel\",\"bairro\":\"Jardim Príncipe\",\"localidade\":\"Lençóis Paulista\",\"estado\":\"São Paulo\"}",
     "headers": {
       "Content-Type": "application/json"
     }
